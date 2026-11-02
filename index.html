@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Utkarsh Motors Sultanpur | EV Sports Electric Scooters</title>
+<meta name="description" content="Utkarsh Motors, Sultanpur. EV Sports electric scooters: Apex S1, Apex S2, Zipster, Glide and Dyna. Call 8127302602 for price and test ride.">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@500;600&display=swap">
+<style>
+/* Layout: white header with logo, full-width hero slider (dark), range cards with photos, detail modal, first-visit offer popup. Accent: logo blue. */
+:root{
+  --bg:#F4F5F7; --surface:#FFFFFF; --ink:#12161B; --muted:#5A6572; --line:#DDE1E6;
+  --accent:#0B4FD0; --accent-ink:#FFFFFF; --accent-soft:#E6EEFC;
+  --dark:#0E1318; --on-dark:#F2F4F6; --dark-muted:#98A3AE; --dark-line:#27313A;
+  --plate:#FFFFFF; --wa:#1E8E4E;
+  --display:'Barlow Condensed','Manrope',system-ui,sans-serif;
+  --font:'Manrope','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0F13; --surface:#141A20; --ink:#EEF1F4; --muted:#9AA6B2; --line:#26303A;
+  --accent:#6B9BFF; --accent-ink:#071127; --accent-soft:#16233F; --dark:#070A0D; --wa:#3CB371; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0F13; --surface:#141A20; --ink:#EEF1F4; --muted:#9AA6B2; --line:#26303A;
+  --accent:#6B9BFF; --accent-ink:#071127; --accent-soft:#16233F; --dark:#070A0D; --wa:#3CB371; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;padding-bottom:66px}
+body.lock{overflow:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+h1,h2,h3{text-wrap:balance}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.label{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.h2{font-family:var(--display);font-size:clamp(34px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:.005em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 24px;border-radius:4px;font:700 15px/1 var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer;letter-spacing:.01em}
+.btn-solid{background:var(--accent);color:var(--accent-ink)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-ghost{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.btn-light{background:#fff;color:#0E1318}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+
+/* header */
+header.site{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:30}
+header.site .wrap{display:flex;align-items:center;gap:20px;padding-block:8px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand img{width:48px;height:48px;border-radius:50%;display:block;background:#fff}
+.brand b{font-family:var(--display);font-size:22px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:3px}
+nav.links{display:none;gap:26px;font-weight:700;font-size:14px}
+nav.links a{text-decoration:none;color:var(--muted);padding:8px 0}
+nav.links a:hover{color:var(--ink)}
+header.site .btn{min-height:42px;padding:8px 18px;font-size:14px}
+@media(min-width:860px){nav.links{display:flex}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--surface)}
+
+/* hero slider */
+.hero{background:var(--dark);position:relative;overflow:hidden}
+.track{display:flex;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.slide{flex:0 0 100%;min-width:0;position:relative;height:clamp(300px,52vw,600px);display:grid;color:var(--on-dark)}
+.slide>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+/* slide with copy + scooter (add more like this, or an <img class="bg"> banner) */
+.slide.copy{background:radial-gradient(120% 90% at 78% 40%,#26323E 0%,#0E1318 62%)}
+.slide.copy .wrap{position:relative;width:100%;display:grid;align-items:center;grid-template-columns:1fr;gap:0}
+.slide.copy .txt{position:relative;z-index:2;padding-block:24px;max-width:30em}
+.slide.copy .k{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8FB0FF}
+.slide.copy h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(44px,9vw,92px);line-height:.95;margin:8px 0 12px}
+.slide.copy p{color:var(--dark-muted);font-size:clamp(14px,2vw,17px);max-width:26em}
+.slide.copy .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.slide.copy .row .btn{min-height:42px;padding:8px 18px;font-size:14px}
+.slide.copy .vehicle{position:absolute;right:max(0px,env(safe-area-inset-right,0px));bottom:6%;width:min(62%,720px);max-height:82%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 26px 30px rgba(0,0,0,.5))}
+@media(max-width:640px){.slide.copy .vehicle{width:78%;opacity:.55;bottom:4%}.slide.copy .txt{max-width:70%}}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(10,14,18,.55);color:#fff;font-size:18px;cursor:pointer;z-index:5;display:none;align-items:center;justify-content:center;font-family:var(--font)}
+.arrow.prev{left:max(14px,env(safe-area-inset-left,0px))}.arrow.next{right:max(14px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.arrow{display:flex}}
+.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px;z-index:5}
+.dots button{width:26px;height:4px;border:0;border-radius:2px;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
+.dots button[aria-current="true"]{background:#fff}
+
+/* quick bar */
+.quick{background:var(--surface);border-bottom:1px solid var(--line)}
+.quick .wrap{display:grid;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.quick .wrap{grid-template-columns:repeat(4,1fr)}}
+.q{padding:18px 12px 18px 0;min-width:0}
+.q b{display:block;font-family:var(--display);font-size:28px;font-weight:700;line-height:1.1;text-transform:uppercase}
+.q span{font-size:13px;color:var(--muted)}
+
+/* sections */
+.sec{padding-block:64px}
+.sec-head{display:grid;gap:8px;margin-bottom:30px;max-width:38em}
+.sec-head p{color:var(--muted)}
+
+/* cards */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.plate{background:linear-gradient(180deg,#F3F5F8,#E3E8EE);aspect-ratio:4/3;display:grid;place-items:center;padding:14px;position:relative}
+.plate img{max-height:100%;max-width:100%;object-fit:contain;display:block;filter:drop-shadow(0 12px 12px rgba(20,30,50,.22))}
+.tag{position:absolute;top:10px;left:10px;background:var(--ink);color:var(--bg);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:3px}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h3{font-family:var(--display);font-size:30px;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.price b{font-size:22px;font-weight:800}
+.price s{color:var(--muted);font-size:14px}
+.mini{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.mini li{background:var(--accent-soft);color:var(--ink);font-size:13px;font-weight:600;padding:3px 10px;border-radius:3px}
+.card .acts{display:flex;gap:10px;margin-top:auto;padding-top:4px}
+.card .acts .btn{flex:1;min-height:42px;padding:8px 12px;font-size:14px}
+
+/* feature trio */
+.feat{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.feat figure{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.feat .plate{aspect-ratio:3/2}
+.feat figcaption{padding:16px 18px}
+.feat b{font-family:var(--display);font-size:24px;text-transform:uppercase;display:block;line-height:1.1}
+.feat span{color:var(--muted);font-size:14px}
+
+/* why */
+.band{background:var(--dark);color:var(--on-dark)}
+.band .label{color:#8FB0FF}
+.why{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:30px}
+.why div{border-top:2px solid #3B6FE0;padding-top:14px}
+.why b{font-family:var(--display);font-size:24px;text-transform:uppercase;display:block;margin-bottom:6px}
+.why p{color:var(--dark-muted);font-size:15px}
+
+/* visit */
+.visit{display:grid;gap:36px}
+@media(min-width:900px){.visit{grid-template-columns:1fr 1fr;gap:64px}}
+.addr{font-size:18px;overflow-wrap:anywhere;margin-top:14px}
+.visit .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.nums{border-top:1px solid var(--line)}
+.num{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.num .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block}
+.num b{font-family:var(--display);font-size:32px;letter-spacing:.03em;font-weight:700;font-variant-numeric:tabular-nums;user-select:all}
+.copy{font:700 13px var(--font);background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:6px 14px;cursor:pointer;min-height:34px}
+.small{font-size:14px;color:var(--muted);margin-top:14px}
+
+footer.site{background:var(--dark);color:var(--dark-muted);font-size:13px}
+footer.site .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer.site b{color:var(--on-dark)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:35;display:flex;gap:8px;background:var(--dark);border-top:1px solid var(--dark-line);padding:8px max(14px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+.bar .btn{flex:1;min-height:44px;padding:6px 10px}
+@media(min-width:900px){.bar{display:none}body{padding-bottom:0}}
+
+/* modals */
+.scrim{position:fixed;inset:0;z-index:100;background:rgba(6,9,12,.72);display:none;align-items:center;justify-content:center;padding:max(14px,env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) max(14px,env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+.scrim.open{display:flex}
+.x{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:0;background:#12161B;color:#fff;font:700 20px/1 var(--font);cursor:pointer;z-index:3;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+
+/* offer popup */
+.offer{position:relative;background:#fff;border-radius:8px;max-width:min(430px,100%);max-height:100%;overflow:auto;display:flex;flex-direction:column;color:#12161B}
+.offer img{display:block;width:100%;height:auto;max-height:calc(100svh - 190px);object-fit:contain;background:#fff;border-radius:8px 8px 0 0}
+.offer .acts{display:flex;gap:10px;padding:14px;flex-wrap:wrap}
+.offer .acts .btn{flex:1;min-width:140px}
+.offer .btn-ghost{background:#fff;color:#12161B;border-color:#C9CFD6}
+
+/* product modal */
+.pm{position:relative;background:var(--surface);border-radius:8px;width:min(980px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1fr}
+@media(min-width:820px){.pm{grid-template-columns:1.05fr 1fr}}
+.pm .gal{background:linear-gradient(180deg,#F3F5F8,#E3E8EE);padding:24px 18px 14px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.pm .main{width:100%;aspect-ratio:4/3;display:grid;place-items:center}
+.pm .main img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 14px rgba(20,30,50,.25))}
+.pm .thumbs{display:flex;gap:8px}
+.pm .thumbs button{width:64px;height:52px;background:#fff;border:2px solid transparent;border-radius:4px;padding:3px;cursor:pointer}
+.pm .thumbs button[aria-current="true"]{border-color:var(--accent)}
+.pm .thumbs img{width:100%;height:100%;object-fit:contain}
+.pm .info{padding:26px 22px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.pm h3{font-family:var(--display);font-size:42px;font-weight:800;text-transform:uppercase;line-height:1;padding-right:44px}
+.pm table{width:100%;border-collapse:collapse;font-size:14.5px}
+.pm th,.pm td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.pm th{font-weight:600;color:var(--muted);width:42%;padding-right:12px}
+.pm td{font-weight:600}
+.pm .acts{display:flex;gap:10px;flex-wrap:wrap}
+.pm .acts .btn{flex:1;min-width:140px}
+.pm .note{font-size:12.5px;color:var(--muted)}
+
+@media(prefers-reduced-motion:reduce){.track{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="#top"><img src="logo.png" width="48" height="48" alt="Utkarsh Motors logo"><span><b>Utkarsh Motors</b><small>EV Sports · Sultanpur</small></span></a>
+  <nav class="links" aria-label="Main"><a href="#range">Scooters</a><a href="#features">Features</a><a href="#why">Why electric</a><a href="#visit">Visit us</a></nav>
+  <a class="btn btn-solid" href="tel:+918127302602">Call us</a>
+</div></header>
+
+<section class="hero" id="top" aria-roledescription="carousel" aria-label="Featured scooters">
+  <div class="track" id="track">
+    <!-- HERO SLIDES. Slide 1 is the EV Sports banner. Add more banners by copying a slide:
+         image banner:  <div class="slide"><img class="bg" src="your-banner.jpg" alt="..."></div> -->
+    <div class="slide"><img class="bg" src="hero1.jpg" width="1600" height="900" alt="EV Sports scooter, speed 50 km/h, battery 60V"></div>
+
+    <div class="slide copy"><div class="wrap">
+      <div class="txt">
+        <p class="k">Apex S2</p>
+        <h2>Built to be seen</h2>
+        <p>45 km/h, front disc and rear drum brakes, reverse gear and NFC. Ride the Apex S2 at our showroom.</p>
+        <div class="row"><button class="btn btn-light" type="button" data-open="s2">View details</button><a class="btn btn-line" href="tel:+918127302602">Call us</a></div>
+      </div>
+      <img class="vehicle" src="s2-side.webp" alt="Purple Apex S2 electric scooter">
+    </div></div>
+
+    <div class="slide copy"><div class="wrap">
+      <div class="txt">
+        <p class="k">Zipster</p>
+        <h2>Smart. Quick. Ready.</h2>
+        <p>Up to 50 km/h with cruise control, NFC access, three speed modes and disc brakes front and rear.</p>
+        <div class="row"><button class="btn btn-light" type="button" data-open="zipster">View details</button><a class="btn btn-line" href="tel:+918127302602">Call us</a></div>
+      </div>
+      <img class="vehicle" src="zip-side.webp" alt="Red Zipster electric scooter">
+    </div></div>
+  </div>
+  <button class="arrow prev" type="button" aria-label="Previous slide">&#8592;</button>
+  <button class="arrow next" type="button" aria-label="Next slide">&#8594;</button>
+  <div class="dots" id="dots"></div>
+</section>
+
+<section class="quick"><div class="wrap">
+  <div class="q"><b>5 models</b><span>On display at the showroom</span></div>
+  <div class="q"><b>Up to 50 km/h</b><span>Top speed, model dependent</span></div>
+  <div class="q"><b>Reverse gear</b><span>On every model</span></div>
+  <div class="q"><b>Test ride</b><span>Ride before you book</span></div>
+</div></section>
+
+<main>
+<section class="sec wrap" id="range">
+  <div class="sec-head">
+    <p class="label">The range</p>
+    <h2 class="h2">Choose your scooter</h2>
+    <p>Specifications as listed by EV Sports. Tap a scooter for the full details, then call or message us for the on-road price and colours in stock.</p>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="sec wrap" id="features" style="padding-top:8px">
+  <div class="sec-head">
+    <p class="label">Built for Indian roads</p>
+    <h2 class="h2">Details that matter every day</h2>
+  </div>
+  <div class="feat">
+    <figure><div class="plate"><img src="f-wheel.webp" alt="Rear wheel and suspension of an EV Sports scooter" loading="lazy"></div><figcaption><b>Durable rear wheel</b><span>With strong suspension</span></figcaption></figure>
+    <figure><div class="plate"><img src="f-handle.webp" alt="Handlebar and mirrors of an EV Sports scooter" loading="lazy"></div><figcaption><b>Smart handle controls</b><span>For easy operation</span></figcaption></figure>
+    <figure><div class="plate"><img src="f-seat.webp" alt="Seat of an EV Sports scooter" loading="lazy"></div><figcaption><b>Wide comfortable seat</b><span>Made for long rides</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="band" id="why"><div class="wrap sec">
+  <p class="label">Why electric</p>
+  <h2 class="h2" style="margin-top:8px;max-width:14em">A smarter way to get around town</h2>
+  <div class="why">
+    <div><b>Lower running cost</b><p>You charge instead of buying petrol, so the cost of every trip comes down.</p></div>
+    <div><b>Less maintenance</b><p>No engine oil and fewer moving parts to look after.</p></div>
+    <div><b>Silent and smooth</b><p>Quiet, smooth acceleration that suits city traffic and daily errands.</p></div>
+    <div><b>No exhaust</b><p>Zero tailpipe emissions on every ride.</p></div>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="visit">
+  <div class="visit">
+    <div>
+      <p class="label">Visit the showroom</p>
+      <h2 class="h2" style="margin-top:8px">Utkarsh Motors, Payagipur</h2>
+      <p class="addr">Lucknow–Varanasi Highway, beside Stella Maris Convent School, near Power House, Narayanpur, Payagipur, Sultanpur, Uttar Pradesh 228001</p>
+      <div class="acts">
+        <a class="btn btn-solid" href="https://maps.app.goo.gl/bz8Qo3SNANgfPwRQA?g_st=ac" rel="noopener">Get directions</a>
+        <a class="btn btn-wa" href="https://wa.me/918127302602?text=Hello%20Utkarsh%20Motors%2C%20I%20want%20to%20book%20a%20test%20ride." rel="noopener">WhatsApp us</a>
+      </div>
+      <p class="small">शोरूम आइए, स्कूटर चलाकर देखिए। दाम और रंग की जानकारी के लिए कॉल करें।</p>
+    </div>
+    <div>
+      <div class="nums">
+        <div class="num"><div><span class="k">Phone and WhatsApp</span><b>81273 02602</b></div><button class="copy" type="button" data-copy="8127302602">Copy</button></div>
+        <div class="num"><div><span class="k">Phone</span><b>73938 00140</b></div><button class="copy" type="button" data-copy="7393800140">Copy</button></div>
+      </div>
+      <p class="small">Showroom hours: please call before you visit.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <p><b>Utkarsh Motors</b> · EV Sports scooters, Sultanpur, Uttar Pradesh</p>
+  <p>Images are for illustration. Specifications and prices may change.</p>
+</div></footer>
+
+<nav class="bar" aria-label="Quick contact">
+  <a class="btn btn-solid" href="tel:+918127302602">Call</a>
+  <a class="btn btn-wa" href="https://wa.me/918127302602" rel="noopener">WhatsApp</a>
+</nav>
+
+<!-- FIRST-VISIT OFFER POPUP. Delete this block (and the OFFER script section) when the offer ends. -->
+<div class="scrim" id="offerScrim" role="dialog" aria-modal="true" aria-label="Diwali Dhamaka Offer">
+  <div class="offer">
+    <button class="x" type="button" id="offerClose" aria-label="Close offer and explore the site">&#10005;</button>
+    <img src="poster.jpg" width="896" height="1200" alt="Diwali Dhamaka Offer: 100% sure gift by lucky coupon on the first 25 bookings. Cello dinner set worth ₹2,949 or Usha iron worth ₹1,499.">
+    <div class="acts">
+      <a class="btn btn-solid" href="https://wa.me/918127302602?text=Hello%20Utkarsh%20Motors%2C%20I%20want%20to%20book%20under%20the%20Diwali%20offer." rel="noopener">Book on WhatsApp</a>
+      <button class="btn btn-ghost" type="button" id="offerExplore">Explore the site</button>
+    </div>
+  </div>
+</div>
+
+<div class="scrim" id="pmScrim" role="dialog" aria-modal="true" aria-label="Scooter details">
+  <div class="pm" id="pm"></div>
+</div>
+
+<script>
+/* ---------- DATA ---------- */
+var PHONE='918127302602';
+var MODELS=[
+ {id:'s1',name:'Apex S1',tag:'Best seller',price:'₹91,000',mrp:'₹1,01,000',speed:'Up to 45 km/h',
+  imgs:['s1-side.webp','s1-front.webp'],chips:['45 km/h','LED meter','Reverse gear'],
+  specs:[['Top speed','Up to 45 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED'],['Headlight','LED'],['Brakes','Front disc and rear drum'],['Gears','1-2-3 with parking and reverse'],['Wheels','Alloy, front 12", rear 10"'],['Security','Anti-theft alarm'],['Other features','Footrest, mirror, USB charger, NFC']]},
+ {id:'s2',name:'Apex S2',tag:'Best seller',price:'₹92,000',mrp:'₹1,07,000',speed:'Up to 45 km/h',
+  imgs:['s2-side.webp','s2-red-side.webp'],chips:['45 km/h','NFC','Reverse gear'],
+  specs:[['Top speed','Up to 45 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED digital'],['Headlight','LED'],['Brakes','Front disc and rear drum'],['Gears','1-2-3 with parking and reverse'],['Wheels','Alloy, front 12", rear 10"'],['Security','Anti-theft alarm'],['Other features','USB charger, NFC, footrest, mirror']]},
+ {id:'zipster',name:'Zipster',tag:'Best seller',price:'₹99,999',mrp:'₹1,10,000',speed:'Up to 50 km/h',
+  imgs:['zip-side.webp','zip-front.webp'],chips:['50 km/h','Cruise control','NFC'],
+  specs:[['Top speed','Up to 50 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED digital'],['Headlight','LED'],['Brakes','Front disc and rear disc'],['Gears','1-2-3 with parking and reverse'],['Speed modes','3 speed control'],['Wheels','Alloy, 12" front and rear'],['Smart features','USB, cruise control, NFC, anti-theft alarm']]},
+ {id:'glide',name:'Glide',tag:'',price:'₹1,05,000',mrp:'₹1,15,000',speed:'',
+  imgs:['glide-side.webp'],chips:['Hub motor','Cruise control','NFC'],
+  specs:[['Motor','Hub motor'],['Battery','48V / 60V'],['Brakes','Disc brakes'],['Gears','Reverse gear'],['Smart features','Cruise control, NFC'],['Top speed','Ask us at the showroom']]},
+ {id:'dyna',name:'Dyna',tag:'',price:'₹1,06,000',mrp:'₹1,21,000',speed:'Up to 50 km/h',
+  imgs:['dyna-side.webp','dyna-front.webp'],chips:['50 km/h','LED lights','Disc brakes'],
+  specs:[['Top speed','Up to 50 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED'],['Headlight','LED'],['Dashboard','LED'],['Brakes','Front disc and rear disc'],['Gears','3-speed control with parking and reverse'],['Wheels','Alloy, 12" front and rear']]}
+];
+function wa(txt){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(txt)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+/* ---------- RANGE CARDS ---------- */
+(function(){
+  var g=document.getElementById('grid'),h='';
+  MODELS.forEach(function(m){
+    h+='<article class="card"><div class="plate">'+(m.tag?'<span class="tag">'+esc(m.tag)+'</span>':'')+
+      '<img src="'+m.imgs[0]+'" alt="'+esc(m.name)+' electric scooter" loading="lazy"></div>'+
+      '<div class="body"><h3>'+esc(m.name)+'</h3>'+
+      '<div class="price"><b>'+esc(m.price)+'</b><s>MRP '+esc(m.mrp)+'</s></div>'+
+      '<ul class="mini">'+m.chips.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')+'</ul>'+
+      '<div class="acts"><button class="btn btn-solid" type="button" data-open="'+m.id+'">View details</button>'+
+      '<a class="btn btn-ghost" href="'+wa('Hello Utkarsh Motors, I want details of '+m.name+'.')+'" rel="noopener">Enquire</a></div></div></article>';
+  });
+  g.innerHTML=h;
+})();
+
+/* ---------- MODALS ---------- */
+var pmScrim=document.getElementById('pmScrim'),pm=document.getElementById('pm'),offerScrim=document.getElementById('offerScrim');
+var lastFocus=null;
+function lock(on){document.body.classList.toggle('lock',on)}
+function openModel(id){
+  var m=MODELS.filter(function(x){return x.id===id})[0]; if(!m)return;
+  lastFocus=document.activeElement;
+  var th=m.imgs.length>1?'<div class="thumbs">'+m.imgs.map(function(s,i){return '<button type="button" data-img="'+s+'" aria-label="Photo '+(i+1)+'" aria-current="'+(i===0)+'"><img src="'+s+'" alt=""></button>'}).join('')+'</div>':'';
+  pm.innerHTML='<button class="x" type="button" data-close="pm" aria-label="Close details">&#10005;</button>'+
+   '<div class="gal"><div class="main"><img id="pmMain" src="'+m.imgs[0]+'" alt="'+esc(m.name)+' electric scooter"></div>'+th+'</div>'+
+   '<div class="info"><div><p class="label">EV Sports</p><h3>'+esc(m.name)+'</h3></div>'+
+   '<div class="price"><b>'+esc(m.price)+'</b><s>MRP '+esc(m.mrp)+'</s></div>'+
+   '<table><tbody>'+m.specs.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>'}).join('')+'</tbody></table>'+
+   '<div class="acts"><a class="btn btn-wa" href="'+wa('Hello Utkarsh Motors, I want to book a test ride for '+m.name+'.')+'" rel="noopener">Book a test ride</a><a class="btn btn-ghost" href="tel:+'+PHONE+'">Call us</a></div>'+
+   '<p class="note">Listed price shown. On-road price, colours and availability are confirmed at the showroom.</p></div>';
+  pmScrim.classList.add('open');lock(true);
+  pm.querySelector('.x').focus();
+}
+function closePm(){pmScrim.classList.remove('open');if(!offerScrim.classList.contains('open'))lock(false);if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}}
+document.addEventListener('click',function(e){
+  var o=e.target.closest('[data-open]'); if(o){openModel(o.getAttribute('data-open'));return}
+  if(e.target.closest('[data-close="pm"]')||e.target===pmScrim){closePm();return}
+  var t=e.target.closest('[data-img]'); if(t){
+    document.getElementById('pmMain').src=t.getAttribute('data-img');
+    pm.querySelectorAll('.thumbs button').forEach(function(b){b.setAttribute('aria-current',b===t?'true':'false')});
+  }
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape')return;
+  if(pmScrim.classList.contains('open'))closePm(); else if(offerScrim.classList.contains('open'))closeOffer();
+});
+
+/* ---------- OFFER (shown on the first visit only) ---------- */
+var OFFER_KEY='utkarsh_offer_seen_v1';
+function closeOffer(){
+  offerScrim.classList.remove('open');lock(false);
+  try{localStorage.setItem(OFFER_KEY,'1')}catch(e){}
+}
+(function(){
+  var seen=false;
+  try{seen=localStorage.getItem(OFFER_KEY)==='1'}catch(e){}
+  if(!seen){
+    offerScrim.classList.add('open');lock(true);
+    setTimeout(function(){var b=document.getElementById('offerClose');if(b)b.focus()},50);
+  }
+  document.getElementById('offerClose').addEventListener('click',closeOffer);
+  document.getElementById('offerExplore').addEventListener('click',closeOffer);
+  offerScrim.addEventListener('click',function(e){if(e.target===offerScrim)closeOffer()});
+})();
+
+/* ---------- HERO SLIDER ---------- */
+(function(){
+  var track=document.getElementById('track'),slides=track.children,n=slides.length,i=0,timer=null;
+  var dots=document.getElementById('dots');
+  for(var k=0;k<n;k++){(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Go to slide '+(k+1));b.addEventListener('click',function(){go(k,true)});dots.appendChild(b)})(k)}
+  function go(x,user){i=(x+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';
+    Array.prototype.forEach.call(dots.children,function(d,j){d.setAttribute('aria-current',j===i?'true':'false')});
+    if(user)restart();}
+  function restart(){clearInterval(timer);if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;timer=setInterval(function(){go(i+1)},6500)}
+  document.querySelector('.arrow.prev').addEventListener('click',function(){go(i-1,true)});
+  document.querySelector('.arrow.next').addEventListener('click',function(){go(i+1,true)});
+  var sx=null;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  track.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(i+(dx<0?1:-1),true);sx=null});
+  go(0);restart();
+})();
+
+/* ---------- COPY NUMBERS ---------- */
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy'),o=b.textContent;
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent=o},1500)},function(){})}catch(e){}
+  });
+});
+</script>
+
+</body>
+</html>
