@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Utkarsh Motors Sultanpur | EV Sports Electric Scooters</title>
-<meta name="description" content="Utkarsh Motors, Sultanpur. EV Sports electric scooters: Apex S1, Apex S2, Zipster, Glide and Dyna. Call 8127302602 for price and test ride.">
+<meta name="description" content="Utkarsh Motors, Sultanpur. EV Sports electric scooters: Apex S1, Apex S2, Zipster, Glide, Dyna and E4. Call 8127302602 for price and test ride.">
 <link rel="icon" href="logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@500;600&display=swap">
 <style>
@@ -13,16 +13,16 @@
   --bg:#F4F5F7; --surface:#FFFFFF; --ink:#12161B; --muted:#5A6572; --line:#DDE1E6;
   --accent:#0B4FD0; --accent-ink:#FFFFFF; --accent-soft:#E6EEFC;
   --dark:#0E1318; --on-dark:#F2F4F6; --dark-muted:#98A3AE; --dark-line:#27313A;
-  --plate:#FFFFFF; --wa:#1E8E4E;
+  --plate:#FFFFFF; --wa:#1E8E4E; --c48:#1F8A4C; --c60:#1F4FD0; --c72:#7B3FC4; --cli:#D13A2E;
   --display:'Barlow Condensed','Manrope',system-ui,sans-serif;
   --font:'Manrope','Noto Sans Devanagari',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0B0F13; --surface:#141A20; --ink:#EEF1F4; --muted:#9AA6B2; --line:#26303A;
-  --accent:#6B9BFF; --accent-ink:#071127; --accent-soft:#16233F; --dark:#070A0D; --wa:#3CB371; color-scheme:dark}}
+  --accent:#6B9BFF; --accent-ink:#071127; --accent-soft:#16233F; --dark:#070A0D; --wa:#3CB371; --c48:#46C27A; --c60:#6B9BFF; --c72:#B58CF2; --cli:#FF7A6E; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B0F13; --surface:#141A20; --ink:#EEF1F4; --muted:#9AA6B2; --line:#26303A;
-  --accent:#6B9BFF; --accent-ink:#071127; --accent-soft:#16233F; --dark:#070A0D; --wa:#3CB371; color-scheme:dark}
+  --accent:#6B9BFF; --accent-ink:#071127; --accent-soft:#16233F; --dark:#070A0D; --wa:#3CB371; --c48:#46C27A; --c60:#6B9BFF; --c72:#B58CF2; --cli:#FF7A6E; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;padding-bottom:66px}
@@ -59,8 +59,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* hero slider */
 .hero{background:var(--dark);position:relative;overflow:hidden}
 .track{display:flex;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.slide{flex:0 0 100%;min-width:0;position:relative;height:clamp(300px,52vw,600px);display:grid;color:var(--on-dark)}
-.slide>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.slide{flex:0 0 100%;min-width:0;position:relative;height:clamp(300px,56.25vw,680px);display:grid;color:var(--on-dark)}
+.slide>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 85%}
+@media(max-width:640px){.slide>img.bg{object-fit:contain;object-position:center}}
 /* slide with copy + scooter (add more like this, or an <img class="bg"> banner) */
 .slide.copy{background:radial-gradient(120% 90% at 78% 40%,#26323E 0%,#0E1318 62%)}
 .slide.copy .wrap{position:relative;width:100%;display:grid;align-items:center;grid-template-columns:1fr;gap:0}
@@ -176,6 +177,61 @@ footer.site b{color:var(--on-dark)}
 .pm .acts .btn{flex:1;min-width:140px}
 .pm .note{font-size:12.5px;color:var(--muted)}
 
+/* variant selector, range, chooser, price table */
+.seg{display:flex;gap:6px}
+.seg button{flex:1 1 0;min-width:0;min-height:38px;font:700 13px var(--font);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;padding:6px 2px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.seg button:disabled{opacity:.38;cursor:not-allowed;text-decoration:line-through}
+.rg{font-size:14px;color:var(--muted)}
+.rg b{color:var(--ink);font-weight:800}
+.ph{display:grid;place-items:center;align-content:center;gap:4px;text-align:center;color:var(--muted);font:600 13px var(--font);width:100%;height:100%;border:1px dashed var(--line);border-radius:4px}
+.ph b{font-family:var(--display);font-size:54px;color:var(--ink);text-transform:uppercase;line-height:1}
+.tiles{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));margin-bottom:22px}
+.tile{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--tc);border-radius:6px;padding:16px 18px}
+.tile span{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tile b{display:block;font-family:var(--display);font-size:34px;font-weight:700;text-transform:uppercase;line-height:1.1;margin-top:4px}
+.tile small{color:var(--muted);font-size:13px}
+.chooser{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:16px}
+.chooser label{font-weight:800;font-size:17px}
+.kmrow{display:flex;align-items:center;gap:16px}
+.kmrow input{flex:1;min-width:0;accent-color:var(--accent);height:32px}
+.kmrow output{font-family:var(--display);font-size:34px;font-weight:700;min-width:96px;text-align:right;font-variant-numeric:tabular-nums}
+.res{background:var(--accent-soft);border-radius:6px;padding:16px 18px;font-size:16px}
+.res .big{font-family:var(--display);font-size:30px;font-weight:700;text-transform:uppercase;line-height:1.1;display:block;margin-bottom:6px}
+.res ul{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14.5px;color:var(--muted)}
+.res li b{color:var(--ink)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table.pt{width:100%;min-width:660px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+table.pt th,table.pt td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+table.pt thead th{border-top:4px solid var(--tc,var(--ink));vertical-align:bottom;font-weight:800;font-size:15px;line-height:1.25}
+table.pt thead th small{display:block;font-weight:600;color:var(--muted);font-size:12.5px;margin-top:2px}
+table.pt tbody th{font-family:var(--display);font-size:24px;text-transform:uppercase;font-weight:700}
+table.pt td{font-weight:800;font-size:17px}
+table.pt td.na{color:var(--muted);font-weight:600;font-size:14px}
+table.pt tr:last-child>*{border-bottom:0}
+.pm .rg{background:var(--accent-soft);padding:10px 12px;border-radius:4px;color:var(--ink)}
+
+/* compare tool */
+.cmpbar{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));margin-bottom:18px}
+.cmpbar label{display:grid;gap:6px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);min-width:0}
+.cmpbar select{font:600 16px var(--font);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;min-height:46px;padding:8px 10px;width:100%;min-width:0}
+table.cmpt{width:100%;min-width:540px;border-collapse:collapse;table-layout:fixed}
+table.cmpt th,table.cmpt td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;font-size:14.5px;overflow-wrap:anywhere}
+table.cmpt thead th{vertical-align:bottom;padding-top:18px}
+table.cmpt tbody th{width:120px;font-weight:600;color:var(--muted)}
+table.cmpt .cp{display:grid;place-items:center;aspect-ratio:4/3;background:linear-gradient(180deg,#F3F5F8,#E3E8EE);border-radius:4px;margin-bottom:10px;padding:6px}
+table.cmpt .cp img{max-width:100%;max-height:100%;object-fit:contain}
+table.cmpt .cp b{font-family:var(--display);font-size:30px;text-transform:uppercase;color:#12161B}
+table.cmpt .cn{font-family:var(--display);font-size:26px;font-weight:700;text-transform:uppercase;line-height:1.05;color:var(--ink)}
+table.cmpt td.pr{font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+table.cmpt td.pr .low{display:inline-block;margin-left:6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:2px 7px;border-radius:3px;vertical-align:middle}
+table.cmpt td.no{color:var(--muted);font-weight:500}
+table.cmpt td .ask{color:var(--muted)}
+table.cmpt tr:last-child>*{border-bottom:0}
+table.cmpt .acts td{padding-top:16px}
+table.cmpt .acts .btn{min-height:40px;padding:8px 10px;font-size:13px;width:100%}
+@media(max-width:640px){table.cmpt{min-width:500px}table.cmpt th,table.cmpt td{padding:10px 8px;font-size:13.5px}table.cmpt tbody th{width:78px}table.cmpt .cn{font-size:22px}table.cmpt td.pr{font-size:16px}table.cmpt tbody th,table.cmpt thead th:first-child{position:sticky;left:0;background:var(--surface);z-index:1}}
+
 @media(prefers-reduced-motion:reduce){.track{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -183,7 +239,7 @@ footer.site b{color:var(--on-dark)}
 
 <header class="site"><div class="wrap">
   <a class="brand" href="#top"><img src="logo.png" width="48" height="48" alt="Utkarsh Motors logo"><span><b>Utkarsh Motors</b><small>EV Sports · Sultanpur</small></span></a>
-  <nav class="links" aria-label="Main"><a href="#range">Scooters</a><a href="#features">Features</a><a href="#why">Why electric</a><a href="#visit">Visit us</a></nav>
+  <nav class="links" aria-label="Main"><a href="#range">Scooters</a><a href="#battery">Battery &amp; range</a><a href="#prices">Price list</a><a href="#compare">Compare</a><a href="#why">Why electric</a><a href="#visit">Visit us</a></nav>
   <a class="btn btn-solid" href="tel:+918127302602">Call us</a>
 </div></header>
 
@@ -219,8 +275,8 @@ footer.site b{color:var(--on-dark)}
 </section>
 
 <section class="quick"><div class="wrap">
-  <div class="q"><b>5 models</b><span>On display at the showroom</span></div>
-  <div class="q"><b>Up to 50 km/h</b><span>Top speed, model dependent</span></div>
+  <div class="q"><b>6 models</b><span>On display at the showroom</span></div>
+  <div class="q"><b>Up to 100+ km</b><span>On a full charge, lithium type</span></div>
   <div class="q"><b>Reverse gear</b><span>On every model</span></div>
   <div class="q"><b>Test ride</b><span>Ride before you book</span></div>
 </div></section>
@@ -230,9 +286,49 @@ footer.site b{color:var(--on-dark)}
   <div class="sec-head">
     <p class="label">The range</p>
     <h2 class="h2">Choose your scooter</h2>
-    <p>Specifications as listed by EV Sports. Tap a scooter for the full details, then call or message us for the on-road price and colours in stock.</p>
+    <p>Pick a battery type on any scooter to see its price and range. Tap View details for the full specifications.</p>
   </div>
   <div class="grid" id="grid"></div>
+</section>
+
+<section class="sec wrap" id="battery" style="padding-top:8px">
+  <div class="sec-head">
+    <p class="label">Battery and range</p>
+    <h2 class="h2">Pick the battery that fits your day</h2>
+    <p>Most models come with a choice of battery. A higher voltage or a lithium pack gives you more distance on a full charge.</p>
+  </div>
+  <div class="tiles" id="btiles"></div>
+  <div class="chooser">
+    <label for="km">How far do you ride in a day?</label>
+    <div class="kmrow"><input type="range" id="km" min="10" max="100" step="5" value="40"><output id="kmout" for="km">40 km</output></div>
+    <div class="res" id="res" aria-live="polite"></div>
+  </div>
+  <p class="note">Range is per full charge, as stated by Utkarsh Motors. Actual distance changes with rider and load weight, road, speed and battery condition.</p>
+</section>
+
+<section class="sec wrap" id="prices" style="padding-top:8px">
+  <div class="sec-head">
+    <p class="label">Price list</p>
+    <h2 class="h2">Every model, every battery</h2>
+  </div>
+  <div class="tw"><table class="pt" id="ptable"></table></div>
+  <p class="note">Prices in rupees and subject to change. NA means that battery is not offered on that model. On-road price, registration and offers are confirmed at the showroom.</p>
+</section>
+
+<section class="sec wrap" id="compare" style="padding-top:8px">
+  <div class="sec-head">
+    <p class="label">Compare</p>
+    <h2 class="h2">Put scooters side by side</h2>
+    <p>Pick up to three models and a battery type. Price, range and specifications line up so you can choose with confidence.</p>
+  </div>
+  <div class="cmpbar">
+    <label for="cm1">Scooter 1<select id="cm1"></select></label>
+    <label for="cm2">Scooter 2<select id="cm2"></select></label>
+    <label for="cm3">Scooter 3<select id="cm3"></select></label>
+    <label for="cmv">Battery type<select id="cmv"></select></label>
+  </div>
+  <div class="tw"><table class="cmpt" id="cmpt"></table></div>
+  <p class="note">Details are as listed by EV Sports. Where a detail is not listed, ask us at the showroom.</p>
 </section>
 
 <section class="sec wrap" id="features" style="padding-top:8px">
@@ -283,7 +379,7 @@ footer.site b{color:var(--on-dark)}
 
 <footer class="site"><div class="wrap">
   <p><b>Utkarsh Motors</b> · EV Sports scooters, Sultanpur, Uttar Pradesh</p>
-  <p>Images are for illustration. Specifications and prices may change.</p>
+  <p>Images are for illustration. Prices, specifications and range may change.</p>
 </div></footer>
 
 <nav class="bar" aria-label="Quick contact">
@@ -310,62 +406,122 @@ footer.site b{color:var(--on-dark)}
 <script>
 /* ---------- DATA ---------- */
 var PHONE='918127302602';
+/* Battery types and the full-charge range stated by Utkarsh Motors */
+var VARS=[
+ {k:'v48',short:'48V',name:'48V Pro',range:'50–60 km',lo:50,c:'--c48'},
+ {k:'v60',short:'60V',name:'60V Max',range:'60–70 km',lo:60,c:'--c60'},
+ {k:'v72',short:'72V',name:'72V Ultra',range:'70–80 km',lo:70,c:'--c72'},
+ {k:'li',short:'Lithium',name:'Lithium type',range:'100+ km',lo:100,c:'--cli'}
+];
+/* Prices from the Utkarsh Motors price list. null = not offered (NA). */
 var MODELS=[
- {id:'s1',name:'Apex S1',tag:'Best seller',price:'₹91,000',mrp:'₹1,01,000',speed:'Up to 45 km/h',
+ {id:'s1',name:'Apex S1',tag:'Best seller',p:{v48:42000,v60:45000,v72:null,li:null},
   imgs:['s1-side.webp','s1-front.webp'],chips:['45 km/h','LED meter','Reverse gear'],
-  specs:[['Top speed','Up to 45 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED'],['Headlight','LED'],['Brakes','Front disc and rear drum'],['Gears','1-2-3 with parking and reverse'],['Wheels','Alloy, front 12", rear 10"'],['Security','Anti-theft alarm'],['Other features','Footrest, mirror, USB charger, NFC']]},
- {id:'s2',name:'Apex S2',tag:'Best seller',price:'₹92,000',mrp:'₹1,07,000',speed:'Up to 45 km/h',
+  specs:[['Top speed','Up to 45 km/h'],['Motor','Hub motor'],['Meter','LED'],['Headlight','LED'],['Brakes','Front disc and rear drum'],['Gears','1-2-3 with parking and reverse'],['Wheels','Alloy, front 12", rear 10"'],['Security','Anti-theft alarm'],['Other features','Footrest, mirror, USB charger, NFC']]},
+ {id:'s2',name:'Apex S2',tag:'Best seller',p:{v48:45000,v60:50000,v72:null,li:null},
   imgs:['s2-side.webp','s2-red-side.webp'],chips:['45 km/h','NFC','Reverse gear'],
-  specs:[['Top speed','Up to 45 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED digital'],['Headlight','LED'],['Brakes','Front disc and rear drum'],['Gears','1-2-3 with parking and reverse'],['Wheels','Alloy, front 12", rear 10"'],['Security','Anti-theft alarm'],['Other features','USB charger, NFC, footrest, mirror']]},
- {id:'zipster',name:'Zipster',tag:'Best seller',price:'₹99,999',mrp:'₹1,10,000',speed:'Up to 50 km/h',
+  specs:[['Top speed','Up to 45 km/h'],['Motor','Hub motor'],['Meter','LED digital'],['Headlight','LED'],['Brakes','Front disc and rear drum'],['Gears','1-2-3 with parking and reverse'],['Wheels','Alloy, front 12", rear 10"'],['Security','Anti-theft alarm'],['Other features','USB charger, NFC, footrest, mirror']]},
+ {id:'zipster',name:'Zipster',tag:'Best seller',p:{v48:50000,v60:55000,v72:60000,li:75000},
   imgs:['zip-side.webp','zip-front.webp'],chips:['50 km/h','Cruise control','NFC'],
-  specs:[['Top speed','Up to 50 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED digital'],['Headlight','LED'],['Brakes','Front disc and rear disc'],['Gears','1-2-3 with parking and reverse'],['Speed modes','3 speed control'],['Wheels','Alloy, 12" front and rear'],['Smart features','USB, cruise control, NFC, anti-theft alarm']]},
- {id:'glide',name:'Glide',tag:'',price:'₹1,05,000',mrp:'₹1,15,000',speed:'',
+  specs:[['Top speed','Up to 50 km/h'],['Motor','Hub motor'],['Meter','LED digital'],['Headlight','LED'],['Brakes','Front disc and rear disc'],['Gears','1-2-3 with parking and reverse'],['Speed modes','3 speed control'],['Wheels','Alloy, 12" front and rear'],['Smart features','USB, cruise control, NFC, anti-theft alarm']]},
+ {id:'glide',name:'Glide',tag:'',p:{v48:55000,v60:60000,v72:65000,li:80000},
   imgs:['glide-side.webp'],chips:['Hub motor','Cruise control','NFC'],
-  specs:[['Motor','Hub motor'],['Battery','48V / 60V'],['Brakes','Disc brakes'],['Gears','Reverse gear'],['Smart features','Cruise control, NFC'],['Top speed','Ask us at the showroom']]},
- {id:'dyna',name:'Dyna',tag:'',price:'₹1,06,000',mrp:'₹1,21,000',speed:'Up to 50 km/h',
+  specs:[['Motor','Hub motor'],['Brakes','Disc brakes'],['Gears','Reverse gear'],['Smart features','Cruise control, NFC'],['Top speed','Ask us at the showroom']]},
+ {id:'dyna',name:'Dyna',tag:'',p:{v48:60000,v60:65000,v72:70000,li:85000},
   imgs:['dyna-side.webp','dyna-front.webp'],chips:['50 km/h','LED lights','Disc brakes'],
-  specs:[['Top speed','Up to 50 km/h'],['Motor','Hub motor'],['Battery','48V / 60V compatible'],['Meter','LED'],['Headlight','LED'],['Dashboard','LED'],['Brakes','Front disc and rear disc'],['Gears','3-speed control with parking and reverse'],['Wheels','Alloy, 12" front and rear']]}
+  specs:[['Top speed','Up to 50 km/h'],['Motor','Hub motor'],['Meter','LED'],['Headlight','LED'],['Dashboard','LED'],['Brakes','Front disc and rear disc'],['Gears','3-speed control with parking and reverse'],['Wheels','Alloy, 12" front and rear']]},
+ {id:'e4',name:'E4',tag:'New',p:{v48:65000,v60:70000,v72:75000,li:90000},
+  imgs:[],chips:['Latest model','Lithium option'],
+  specs:[['Details','Ask at the showroom']]}
 ];
 function wa(txt){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(txt)}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function inr(n){return '₹'+Number(n).toLocaleString('en-IN')}
+function vOf(k){return VARS.filter(function(v){return v.k===k})[0]}
+function firstVar(m){for(var i=0;i<VARS.length;i++){if(m.p[VARS[i].k]!=null)return VARS[i].k}}
+function modelById(id){return MODELS.filter(function(x){return x.id===id})[0]}
+function segHTML(m,sel){
+  return '<div class="seg" role="group" aria-label="Battery type for '+esc(m.name)+'">'+VARS.map(function(v){
+    var ok=m.p[v.k]!=null;
+    return '<button type="button" data-var="'+v.k+'"'+(ok?'':' disabled')+' aria-pressed="'+(v.k===sel)+'" title="'+esc(v.name+(ok?'':' (not offered)'))+'">'+esc(v.short)+'</button>';
+  }).join('')+'</div>';
+}
+function priceHTML(m,k){var v=vOf(k);return '<div class="price"><b class="pv">'+inr(m.p[k])+'</b><span class="vn" style="color:var(--muted);font-size:14px">'+esc(v.name)+'</span></div><p class="rg">Range on full charge: <b class="rv">'+esc(v.range)+'</b></p>'}
+function setVariant(root,m,k){
+  var v=vOf(k);
+  root.querySelector('.pv').textContent=inr(m.p[k]);
+  root.querySelector('.vn').textContent=v.name;
+  root.querySelector('.rv').textContent=v.range;
+  root.querySelectorAll('[data-var]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-var')===k?'true':'false')});
+  root.setAttribute('data-sel',k);
+  var a=root.querySelector('[data-enq]'); if(a)a.href=wa('Hello Utkarsh Motors, I want details of '+m.name+' ('+v.name+', '+inr(m.p[k])+').');
+}
+function plateHTML(m,big){
+  if(m.imgs.length)return '<img src="'+m.imgs[0]+'" alt="'+esc(m.name)+' electric scooter"'+(big?' id="pmMain"':' loading="lazy"')+'>';
+  return '<div class="ph"><b>'+esc(m.name)+'</b>Photo coming soon</div>';
+}
 
 /* ---------- RANGE CARDS ---------- */
 (function(){
   var g=document.getElementById('grid'),h='';
   MODELS.forEach(function(m){
-    h+='<article class="card"><div class="plate">'+(m.tag?'<span class="tag">'+esc(m.tag)+'</span>':'')+
-      '<img src="'+m.imgs[0]+'" alt="'+esc(m.name)+' electric scooter" loading="lazy"></div>'+
-      '<div class="body"><h3>'+esc(m.name)+'</h3>'+
-      '<div class="price"><b>'+esc(m.price)+'</b><s>MRP '+esc(m.mrp)+'</s></div>'+
+    var k=firstVar(m);
+    h+='<article class="card" data-m="'+m.id+'" data-sel="'+k+'"><div class="plate">'+(m.tag?'<span class="tag">'+esc(m.tag)+'</span>':'')+plateHTML(m,false)+'</div>'+
+      '<div class="body"><h3>'+esc(m.name)+'</h3>'+segHTML(m,k)+priceHTML(m,k)+
       '<ul class="mini">'+m.chips.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')+'</ul>'+
       '<div class="acts"><button class="btn btn-solid" type="button" data-open="'+m.id+'">View details</button>'+
-      '<a class="btn btn-ghost" href="'+wa('Hello Utkarsh Motors, I want details of '+m.name+'.')+'" rel="noopener">Enquire</a></div></div></article>';
+      '<a class="btn btn-ghost" data-enq href="#" rel="noopener">Enquire</a></div></div></article>';
   });
   g.innerHTML=h;
+  g.querySelectorAll('.card').forEach(function(c){var m=modelById(c.getAttribute('data-m'));setVariant(c,m,c.getAttribute('data-sel'))});
+})();
+
+/* ---------- BATTERY TILES, CHOOSER, PRICE TABLE ---------- */
+(function(){
+  document.getElementById('btiles').innerHTML=VARS.map(function(v){
+    return '<div class="tile" style="--tc:var('+v.c+')"><span>'+esc(v.k==='li'?'Lithium type':v.name)+'</span><b>'+esc(v.range)+'</b><small>on a full charge</small></div>';
+  }).join('');
+  var km=document.getElementById('km'),out=document.getElementById('kmout'),res=document.getElementById('res');
+  function pick(d){for(var i=0;i<VARS.length;i++){if(VARS[i].lo>=d)return VARS[i]}return VARS[VARS.length-1]}
+  function render(){
+    var d=parseInt(km.value,10); out.textContent=d>=100?'100+ km':d+' km';
+    var v=pick(d),avail=MODELS.filter(function(m){return m.p[v.k]!=null});
+    res.innerHTML='<span class="big">'+esc(v.name)+'</span>For about '+(d>=100?'100 km or more':d+' km')+' a day, '+esc(v.name)+' gives '+esc(v.range)+' on a full charge, so you start each day with distance to spare.'+
+      '<ul>'+avail.map(function(m){return '<li><b>'+esc(m.name)+'</b> '+inr(m.p[v.k])+'</li>'}).join('')+'</ul>';
+  }
+  km.addEventListener('input',render);render();
+  var t='<thead><tr><th scope="col">Model</th>'+VARS.map(function(v){return '<th scope="col" style="--tc:var('+v.c+')">'+esc(v.name)+'<small>'+esc(v.range)+'</small></th>'}).join('')+'</tr></thead><tbody>';
+  MODELS.forEach(function(m){t+='<tr><th scope="row">'+esc(m.name)+'</th>'+VARS.map(function(v){return m.p[v.k]!=null?'<td>'+inr(m.p[v.k])+'</td>':'<td class="na">NA</td>'}).join('')+'</tr>'});
+  document.getElementById('ptable').innerHTML=t+'</tbody>';
 })();
 
 /* ---------- MODALS ---------- */
 var pmScrim=document.getElementById('pmScrim'),pm=document.getElementById('pm'),offerScrim=document.getElementById('offerScrim');
 var lastFocus=null;
 function lock(on){document.body.classList.toggle('lock',on)}
-function openModel(id){
-  var m=MODELS.filter(function(x){return x.id===id})[0]; if(!m)return;
+function openModel(id,sel){
+  var m=modelById(id); if(!m)return;
   lastFocus=document.activeElement;
+  var k=sel&&m.p[sel]!=null?sel:firstVar(m);
   var th=m.imgs.length>1?'<div class="thumbs">'+m.imgs.map(function(s,i){return '<button type="button" data-img="'+s+'" aria-label="Photo '+(i+1)+'" aria-current="'+(i===0)+'"><img src="'+s+'" alt=""></button>'}).join('')+'</div>':'';
+  var batt=VARS.filter(function(v){return m.p[v.k]!=null}).map(function(v){return v.name}).join(', ');
+  var rows=[['Battery options',batt]].concat(m.specs);
   pm.innerHTML='<button class="x" type="button" data-close="pm" aria-label="Close details">&#10005;</button>'+
-   '<div class="gal"><div class="main"><img id="pmMain" src="'+m.imgs[0]+'" alt="'+esc(m.name)+' electric scooter"></div>'+th+'</div>'+
-   '<div class="info"><div><p class="label">EV Sports</p><h3>'+esc(m.name)+'</h3></div>'+
-   '<div class="price"><b>'+esc(m.price)+'</b><s>MRP '+esc(m.mrp)+'</s></div>'+
-   '<table><tbody>'+m.specs.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>'}).join('')+'</tbody></table>'+
-   '<div class="acts"><a class="btn btn-wa" href="'+wa('Hello Utkarsh Motors, I want to book a test ride for '+m.name+'.')+'" rel="noopener">Book a test ride</a><a class="btn btn-ghost" href="tel:+'+PHONE+'">Call us</a></div>'+
-   '<p class="note">Listed price shown. On-road price, colours and availability are confirmed at the showroom.</p></div>';
+   '<div class="gal"><div class="main">'+plateHTML(m,true)+'</div>'+th+'</div>'+
+   '<div class="info" data-m="'+m.id+'"><div><p class="label">EV Sports</p><h3>'+esc(m.name)+'</h3></div>'+
+   segHTML(m,k)+priceHTML(m,k)+
+   '<table><tbody>'+rows.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>'}).join('')+'</tbody></table>'+
+   '<div class="acts"><a class="btn btn-wa" data-enq href="#" rel="noopener">Book a test ride</a><a class="btn btn-ghost" href="tel:+'+PHONE+'">Call us</a></div>'+
+   '<p class="note">On-road price, registration, colours and availability are confirmed at the showroom. Range varies with rider, load, road and speed.</p></div>';
+  var info=pm.querySelector('.info'); setVariant(info,m,k);
   pmScrim.classList.add('open');lock(true);
   pm.querySelector('.x').focus();
 }
 function closePm(){pmScrim.classList.remove('open');if(!offerScrim.classList.contains('open'))lock(false);if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}}
 document.addEventListener('click',function(e){
-  var o=e.target.closest('[data-open]'); if(o){openModel(o.getAttribute('data-open'));return}
+  var vb=e.target.closest('[data-var]');
+  if(vb&&!vb.disabled){var root=vb.closest('[data-m]');if(root){setVariant(root,modelById(root.getAttribute('data-m')),vb.getAttribute('data-var'));return}}
+  var o=e.target.closest('[data-open]'); if(o){var card=o.closest('.card');openModel(o.getAttribute('data-open'),card?card.getAttribute('data-sel'):null);return}
   if(e.target.closest('[data-close="pm"]')||e.target===pmScrim){closePm();return}
   var t=e.target.closest('[data-img]'); if(t){
     document.getElementById('pmMain').src=t.getAttribute('data-img');
@@ -376,6 +532,39 @@ document.addEventListener('keydown',function(e){
   if(e.key!=='Escape')return;
   if(pmScrim.classList.contains('open'))closePm(); else if(offerScrim.classList.contains('open'))closeOffer();
 });
+
+/* ---------- COMPARE ---------- */
+(function(){
+  var sels=[document.getElementById('cm1'),document.getElementById('cm2'),document.getElementById('cm3')],vs=document.getElementById('cmv'),tb=document.getElementById('cmpt');
+  var defs=['s2','zipster','dyna'];
+  sels.forEach(function(el,i){
+    el.innerHTML=(i===2?'<option value="">None</option>':'')+MODELS.map(function(m){return '<option value="'+m.id+'">'+esc(m.name)+'</option>'}).join('');
+    el.value=defs[i];el.addEventListener('change',draw);
+  });
+  vs.innerHTML=VARS.map(function(v){return '<option value="'+v.k+'">'+esc(v.name)+' ('+esc(v.range)+')</option>'}).join('');
+  vs.value='v60';vs.addEventListener('change',draw);
+  var ROWS=[['Top speed',['Top speed']],['Motor',['Motor']],['Meter',['Meter','Dashboard']],['Headlight',['Headlight']],['Brakes',['Brakes']],['Gears',['Gears']],['Wheels',['Wheels']],['Features',['Smart features','Other features']],['Security',['Security']]];
+  function sv(m,keys){for(var i=0;i<m.specs.length;i++){if(keys.indexOf(m.specs[i][0])>-1)return m.specs[i][1]}return null}
+  function draw(){
+    var ms=[];sels.forEach(function(el){var m=el.value?modelById(el.value):null;if(m)ms.push(m)});
+    var k=vs.value,v=vOf(k),low=null;
+    ms.forEach(function(m){if(m.p[k]!=null&&(low===null||m.p[k]<low))low=m.p[k]});
+    var h='<thead><tr><th scope="col"><span class="sr" style="position:absolute;left:-9999px">Feature</span></th>'+ms.map(function(m){
+      return '<th scope="col"><div class="cp">'+(m.imgs.length?'<img src="'+m.imgs[0]+'" alt="'+esc(m.name)+'">':'<b>'+esc(m.name)+'</b>')+'</div><div class="cn">'+esc(m.name)+'</div></th>'}).join('')+'</tr></thead><tbody>';
+    h+='<tr><th scope="row">Price ('+esc(v.short)+')</th>'+ms.map(function(m){
+      return m.p[k]!=null?'<td class="pr">'+inr(m.p[k])+(ms.length>1&&m.p[k]===low?'<span class="low">Lowest</span>':'')+'</td>':'<td class="no">Not offered</td>'}).join('')+'</tr>';
+    h+='<tr><th scope="row">Range</th>'+ms.map(function(m){return m.p[k]!=null?'<td><b>'+esc(v.range)+'</b></td>':'<td class="no">NA</td>'}).join('')+'</tr>';
+    h+='<tr><th scope="row">Batteries</th>'+ms.map(function(m){return '<td>'+VARS.filter(function(x){return m.p[x.k]!=null}).map(function(x){return esc(x.short)}).join(', ')+'</td>'}).join('')+'</tr>';
+    ROWS.forEach(function(r){
+      h+='<tr><th scope="row">'+r[0]+'</th>'+ms.map(function(m){var x=sv(m,r[1]);return x?'<td>'+esc(x)+'</td>':'<td><span class="ask">Ask us</span></td>'}).join('')+'</tr>';
+    });
+    h+='<tr class="acts"><th scope="row"></th>'+ms.map(function(m){
+      var ok=m.p[k]!=null;
+      return '<td>'+(ok?'<a class="btn btn-solid" href="'+wa('Hello Utkarsh Motors, I want to book a test ride for '+m.name+' ('+v.name+', '+inr(m.p[k])+').')+'" rel="noopener">Enquire</a>':'<button class="btn btn-ghost" type="button" data-open="'+m.id+'">View details</button>')+'</td>'}).join('')+'</tr></tbody>';
+    tb.innerHTML=h;
+  }
+  draw();
+})();
 
 /* ---------- OFFER (shown on the first visit only) ---------- */
 var OFFER_KEY='utkarsh_offer_seen_v1';
