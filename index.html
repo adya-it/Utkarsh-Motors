@@ -49,14 +49,14 @@ header.site .wrap{display:flex;align-items:center;gap:20px;padding-block:8px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
 .evh{display:flex;align-items:center;padding-left:14px;border-left:1px solid var(--line);flex:none}
 .evh img{height:30px;width:auto;display:block}
-.brand img{width:48px;height:48px;border-radius:50%;display:block;background:#fff}
+.brand img{width:58px;height:auto;display:block}
 .brand b{font-family:var(--display);font-size:22px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;line-height:1}
 .brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:3px}
 nav.links{display:none;gap:26px;font-weight:700;font-size:14px}
 nav.links a{text-decoration:none;color:var(--muted);padding:8px 0}
 nav.links a:hover{color:var(--ink)}
 header.site .btn{min-height:42px;padding:8px 18px;font-size:14px;white-space:nowrap;flex:none}
-@media(max-width:520px){.brand small{display:none}.brand b{font-size:18px}.brandset{gap:10px}.evh{padding-left:10px}.evh img{height:22px}.brand img{width:40px;height:40px}header.site .wrap{gap:10px}}
+@media(max-width:520px){.brand small{display:none}.brand b{font-size:18px}.brandset{gap:10px}.evh{padding-left:10px}.evh img{height:22px}.brand img{width:46px;height:auto}header.site .wrap{gap:10px}}
 @media(min-width:860px){nav.links{display:flex}}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--surface)}
 
@@ -272,6 +272,8 @@ body:not(.deal-on) .deal,body:not(.deal-on) .oft{display:none!important}
 .ssd button[aria-current="true"]{background:#12161B;width:18px;border-radius:4px}
 .tag{z-index:5}
 /* EV Sports mark on every scooter photo */
+.plate::before,.cp::before,.pm .main::before{content:"";position:absolute;right:10px;top:10px;width:58px;height:52px;background:url(logo.png) right top/contain no-repeat;z-index:3;pointer-events:none}
+.feat .plate::before{display:none}
 .plate::after,.cp::after,.pm .main::after{content:"";position:absolute;right:10px;bottom:8px;width:54px;height:30px;background:url(evlogo.png) right bottom/contain no-repeat;z-index:3;pointer-events:none}
 .pm .main{position:relative}
 table.cmpt .cp{position:relative}
@@ -298,7 +300,7 @@ table.cmpt .cp{position:relative}
 <div class="deal" role="timer" aria-label="Diwali offer countdown"><div class="wrap"><span>Diwali Offer &middot; Limited time. Ends in</span><span class="cd" id="cd"></span></div></div>
 
 <header class="site"><div class="wrap">
-  <div class="brandset"><a class="brand" href="#top"><img src="logo.png" width="48" height="48" alt="Utkarsh Motors logo"><span><b>Utkarsh Motors</b><small>EV Sports · Sultanpur</small></span></a><span class="evh"><img src="evlogo.png" alt="EV Sports"></span></div>
+  <div class="brandset"><a class="brand" href="#top"><img src="logo.png" width="58" height="52" alt="Utkarsh Motors logo"><span><b>Utkarsh Motors</b><small>EV Sports · Sultanpur</small></span></a><span class="evh"><img src="evlogo.png" alt="EV Sports"></span></div>
   <nav class="links" aria-label="Main"><a href="#range">Scooters</a><a href="#battery">Battery &amp; range</a><a href="#prices">Price list</a><a href="#compare">Compare</a><a href="#why">Why electric</a><a href="#visit">Visit us</a></nav>
   <a class="btn btn-solid" href="tel:+918127302602">Call us</a>
 </div></header>
